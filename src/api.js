@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// 1. Base URL set karo (VITE_API_URL from environment for separate domain hosting, or local '/api' proxy)
-export const BACKEND_URL = import.meta.env.VITE_API_URL || '/api'; 
+// 1. Base URL set karo (VITE_API_URL from environment, or production render fallback, or local '/api' dev proxy)
+export const BACKEND_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? '/api' : 'https://intellihire-backend-6uq4.onrender.com'); 
 const API = axios.create({ baseURL: BACKEND_URL });
 
 console.log("!!! API CONNECTIVITY CHECK !!!");
