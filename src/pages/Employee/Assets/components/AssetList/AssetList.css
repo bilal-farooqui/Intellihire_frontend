@@ -1,0 +1,120 @@
+.asset-list-container {
+  overflow-x: auto;
+}
+
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.asset-table thead {
+  background-color: #f8f9fa;
+}
+
+.asset-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  white-space: nowrap;
+}
+
+.asset-table td {
+  padding: 15px;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.asset-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-assigned {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+.status-returned {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-available {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.condition-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.condition-excellent {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.condition-good {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.condition-fair {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.btn-action:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.btn-return:hover {
+  color: #11c77d;
+}
+
+.btn-delete:hover {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .asset-list-container {
+    overflow-x: scroll;
+  }
+
+  .asset-table {
+    min-width: 1200px;
+  }
+}
+

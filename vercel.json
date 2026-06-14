@@ -1,0 +1,15 @@
+{
+  "env": {
+    "BLIS_ARCH": "generic"
+  },
+  "rewrites": [
+    { "source": "/api/test", "destination": "/api/test.py" },
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/*.py": {
+      "includeFiles": "backend/**"
+    }
+  }
+}

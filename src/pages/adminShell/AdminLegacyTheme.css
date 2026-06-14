@@ -1,0 +1,568 @@
+/**
+ * Dark glass + mint accents for legacy admin pages (Employees, Hiring, Leaves,
+ * Openings, Attendance, AI Tester). Scoped to .hr-app-admin only.
+ */
+.hr-app-admin {
+  --adm-glass: linear-gradient(170deg, rgba(18, 24, 34, 0.85) 0%, rgba(10, 13, 20, 0.94) 100%);
+  --adm-inner: rgba(255, 255, 255, 0.06);
+  --adm-inner-deep: rgba(10, 13, 20, 0.45);
+  --adm-border: rgba(217, 236, 255, 0.16);
+  --adm-border-soft: rgba(255, 255, 255, 0.08);
+  --adm-text: #ecf2ff;
+  --adm-muted: #8d97ad;
+  --adm-heading: #f4f7ff;
+  --adm-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* --- Shared titles & empty states --- */
+.hr-app-admin .page-title {
+  color: var(--adm-heading) !important;
+  letter-spacing: -0.02em;
+}
+
+.hr-app-admin .section-heading {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .no-openings,
+.hr-app-admin .no-data,
+.hr-app-admin .employee-loading {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .leaves-info,
+.hr-app-admin .leaves-error {
+  color: var(--adm-muted);
+}
+
+.hr-app-admin .leaves-error {
+  color: #ffb4b4;
+}
+
+/* --- Employees --- */
+.hr-app-admin .employee-section {
+  background: var(--adm-glass) !important;
+  border: 1px solid var(--adm-border) !important;
+  box-shadow: var(--adm-shadow) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px !important;
+}
+
+.hr-app-admin .add-employee-form-container {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  border-radius: 16px !important;
+}
+
+.hr-app-admin .form-title,
+.hr-app-admin .add-employee-form label {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .add-employee-form .form-input,
+.hr-app-admin .add-employee-form select {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+  border-radius: 12px !important;
+}
+
+.hr-app-admin .add-employee-form small {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .employee-card {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  border-radius: 16px !important;
+}
+
+.hr-app-admin .employee-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
+}
+
+.hr-app-admin .employee-name,
+.hr-app-admin .info-value {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .employee-designation,
+.hr-app-admin .info-label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .employee-actions {
+  border-top-color: var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .edit-input,
+.hr-app-admin .edit-select {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .employee-error {
+  background: rgba(255, 85, 85, 0.12) !important;
+  border: 1px solid rgba(255, 85, 85, 0.35) !important;
+}
+
+.hr-app-admin .employee-error .error-message {
+  color: #ffc1c1 !important;
+}
+
+.hr-app-admin .btn-cancel {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--adm-text) !important;
+  border: 1px solid var(--adm-border-soft);
+}
+
+/* --- Hiring --- */
+.hr-app-admin .hiring-section {
+  background: var(--adm-glass) !important;
+  border: 1px solid var(--adm-border) !important;
+  box-shadow: var(--adm-shadow) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px !important;
+}
+
+.hr-app-admin .stat-item {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .stat-item strong {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .stat-item.unviewed,
+.hr-app-admin .stat-item.unviewed strong {
+  color: #ff9b9b !important;
+}
+
+.hr-app-admin .option-card {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  border-radius: 16px !important;
+}
+
+.hr-app-admin .option-card h3 {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .option-card p {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .filter-label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .position-select {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+  border-radius: 12px !important;
+}
+
+/* CV table */
+.hr-app-admin .cv-table {
+  background: transparent !important;
+  border: 1px solid var(--adm-border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hr-app-admin .cv-table thead {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.hr-app-admin .cv-table th {
+  color: var(--adm-muted) !important;
+  border-bottom: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .cv-table td {
+  color: var(--adm-text) !important;
+  border-bottom: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .cv-table tbody tr:hover {
+  background: rgba(67, 244, 177, 0.06) !important;
+}
+
+/* Manual review */
+.hr-app-admin .manual-review .btn-back {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .manual-review .btn-back:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.hr-app-admin .cv-counter {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .cv-details-card {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .applicant-name {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .applicant-email,
+.hr-app-admin .meta-item {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .meta-item strong {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .cv-preview {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .preview-placeholder,
+.hr-app-admin .preview-text,
+.hr-app-admin .preview-note {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .btn-nav {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid rgba(67, 244, 177, 0.35) !important;
+  color: #43f4b1 !important;
+}
+
+.hr-app-admin .btn-nav:hover:not(:disabled) {
+  background: rgba(67, 244, 177, 0.15) !important;
+  color: #ecf2ff !important;
+}
+
+.hr-app-admin .no-cv-selected {
+  color: var(--adm-muted) !important;
+}
+
+/* AI filtering */
+.hr-app-admin .ai-filtering .btn-back {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .ai-title {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .ai-controls .control-group {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .control-label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .position-display,
+.hr-app-admin .count-display {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .ai-action-section {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  border-radius: 16px !important;
+}
+
+.hr-app-admin .ai-note {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .ai-results-placeholder {
+  background: var(--adm-inner-deep) !important;
+  border-color: var(--adm-border-soft) !important;
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .ai-results-placeholder h4,
+.hr-app-admin .placeholder-subtext {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .criteria-list li {
+  color: var(--adm-muted) !important;
+}
+
+/* --- Admin leaves --- */
+.hr-app-admin .leaves-section {
+  background: var(--adm-glass) !important;
+  border: 1px solid var(--adm-border) !important;
+  box-shadow: var(--adm-shadow) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px !important;
+}
+
+.hr-app-admin .openings-stats .stat-item {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .openings-stats .stat-item strong {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .leave-row {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .leave-type-tag {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .leave-dates,
+.hr-app-admin .leave-comment {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .leave-reason {
+  color: var(--adm-text) !important;
+}
+
+/* --- Admin openings (grid + list layouts) --- */
+.hr-app-admin .form-card,
+.hr-app-admin .list-card,
+.hr-app-admin .openings-section {
+  background: var(--adm-glass) !important;
+  border: 1px solid var(--adm-border) !important;
+  box-shadow: var(--adm-shadow) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px !important;
+}
+
+.hr-app-admin .opening-form,
+.hr-app-admin .opening-row,
+.hr-app-admin .opening-card {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .form-group label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .admin-openings-page .form-group input,
+.hr-app-admin .admin-openings-page .form-group select,
+.hr-app-admin .opening-form .form-group input,
+.hr-app-admin .opening-form .form-group select,
+.hr-app-admin .form-card .form-group input,
+.hr-app-admin .form-card .form-group select {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .form-card .form-group label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .form-card input::placeholder,
+.hr-app-admin .opening-form input::placeholder,
+.hr-app-admin .add-employee-form input::placeholder {
+  color: #808ba1;
+}
+
+.hr-app-admin .btn-add-employee {
+  color: #04110c !important;
+  border-radius: 999px !important;
+}
+
+.hr-app-admin .opening-title,
+.hr-app-admin .opening-info .opening-title {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .opening-meta,
+.hr-app-admin .opening-meta .opening-department,
+.hr-app-admin .opening-meta .opening-location,
+.hr-app-admin .opening-meta .opening-type,
+.hr-app-admin .opening-date,
+.hr-app-admin .opening-separator,
+.hr-app-admin .dot {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .detail-label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .detail-value {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .opening-details,
+.hr-app-admin .opening-actions {
+  border-top-color: var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .add-opening-btn {
+  color: #04110c !important;
+  border-radius: 999px !important;
+}
+
+.hr-app-admin .primary-btn {
+  color: #04110c !important;
+  border-radius: 999px !important;
+}
+
+/* --- Admin attendance --- */
+.hr-app-admin .admin-attendance-page .attendance-section {
+  background: var(--adm-glass) !important;
+  border: 1px solid var(--adm-border) !important;
+  box-shadow: var(--adm-shadow) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px !important;
+}
+
+.hr-app-admin .filter-group label {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .filter-group select,
+.hr-app-admin .filter-group input {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .attendance-table thead {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.hr-app-admin .attendance-table th {
+  color: var(--adm-muted) !important;
+  border-bottom: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .attendance-table td {
+  color: var(--adm-text) !important;
+  border-bottom: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .attendance-table tbody tr:hover {
+  background: rgba(67, 244, 177, 0.05) !important;
+}
+
+.hr-app-admin .attendance-table input {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+/* --- AI Tester --- */
+.hr-app-admin .ai-tester-container {
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .ai-tester-header h1 {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .ai-tester-header p,
+.hr-app-admin .results-info {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .ai-tester-container .card {
+  background: var(--adm-glass) !important;
+  border: 1px solid var(--adm-border) !important;
+  box-shadow: var(--adm-shadow) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hr-app-admin .ai-tester-container .card h3 {
+  color: var(--adm-heading) !important;
+  border-bottom-color: var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .ai-tester-container textarea {
+  background: var(--adm-inner-deep) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .ai-tester-container textarea:focus {
+  background: var(--adm-inner-deep) !important;
+}
+
+.hr-app-admin .file-label {
+  background: var(--adm-inner) !important;
+  border-color: var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .file-label:hover {
+  background: rgba(67, 244, 177, 0.08) !important;
+}
+
+.hr-app-admin .file-list {
+  background: var(--adm-inner-deep) !important;
+}
+
+.hr-app-admin .file-item {
+  background: rgba(0, 0, 0, 0.25) !important;
+  color: var(--adm-text) !important;
+}
+
+.hr-app-admin .results-table th {
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: var(--adm-muted) !important;
+  border-bottom: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .results-table td {
+  color: var(--adm-text) !important;
+  border-bottom: 1px solid var(--adm-border-soft) !important;
+}
+
+.hr-app-admin .top-match {
+  background: rgba(67, 244, 177, 0.08) !important;
+}
+
+.hr-app-admin .score-bar-bg {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.hr-app-admin .score-text {
+  color: var(--adm-heading) !important;
+}
+
+.hr-app-admin .file-label i {
+  color: var(--adm-muted) !important;
+}
+
+.hr-app-admin .btn-download {
+  color: #04110c !important;
+}
+
+.hr-app-admin .btn-shortlist,
+.hr-app-admin .btn-reject {
+  border-radius: 10px !important;
+}
+
+.hr-app-admin .attendance-section .primary-btn,
+.hr-app-admin .attendance-section button.primary-btn {
+  color: #04110c !important;
+  border-radius: 999px !important;
+}

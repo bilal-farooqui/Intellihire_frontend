@@ -1,0 +1,212 @@
+.admin-leaves-page {
+  width: 100%;
+}
+
+.leaves-section {
+  background: #111827;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.openings-stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.stat-item {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.stat-item strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.leaves-info {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.leaves-error {
+  font-size: 14px;
+  color: #ef4444;
+  margin-bottom: 16px;
+}
+
+.leaves-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* High density */
+}
+
+.leave-row {
+  background: #0B0F19;
+  border-radius: 8px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.leave-row:hover {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.leave-main {
+  flex: 1.5;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.leave-side {
+  flex: 0.8;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.leave-emp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.leave-emp-id {
+  font-size: 14px;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.leave-type-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.leave-dates {
+  font-size: 13px;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.leave-reason {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.leave-status-pill {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.leave-status-pill.pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.leave-status-pill.approved {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.leave-status-pill.rejected {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.leave-comment {
+  font-size: 12px;
+  color: #64748b;
+  text-align: right;
+  font-style: italic;
+}
+
+.leave-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-approve,
+.btn-reject {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-approve {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.btn-approve:hover {
+  background: #10B981;
+  color: #0B0F19;
+}
+
+.btn-reject {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn-reject:hover {
+  background: #ef4444;
+  color: #0B0F19;
+}
+
+.btn-approve:disabled,
+.btn-reject:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .leave-side {
+    align-items: flex-start;
+  }
+}

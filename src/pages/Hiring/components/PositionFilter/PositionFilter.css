@@ -1,0 +1,41 @@
+.position-filter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.position-select {
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 200px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.position-select:focus {
+  outline: none;
+  border-color: #11c77d;
+}
+
+@media (max-width: 768px) {
+  .position-filter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .position-select {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,99 @@
+/* Scoped — avoids global `.sidebar` from admin/applicant CSS loading later in the bundle */
+
+.employee-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0d3d2c 0%, #0a2a1f 55%, #071510 100%);
+  color: #ecf2ff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.45);
+  border-right: 1px solid rgba(217, 236, 255, 0.12);
+}
+
+.employee-sidebar__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 0;
+}
+
+.employee-sidebar__header {
+  padding: 0 20px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.employee-sidebar__logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f4f7ff;
+  letter-spacing: -0.02em;
+}
+
+.employee-sidebar__nav {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.employee-sidebar__menu {
+  list-style: none;
+  padding: 0;
+}
+
+.employee-sidebar__menu > li {
+  margin-bottom: 5px;
+}
+
+.employee-sidebar__menu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: #aeb8c8;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.22s ease;
+  border-left: 3px solid transparent;
+}
+
+.employee-sidebar__menu > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #dce3ef;
+}
+
+.employee-sidebar__menu > li > a.active {
+  background: linear-gradient(90deg, rgba(67, 244, 177, 0.14) 0%, rgba(67, 244, 177, 0.02) 100%);
+  color: #43f4b1;
+  border-left-color: #11c77d;
+  font-weight: 600;
+}
+
+.employee-sidebar__illustration {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.employee-sidebar__illustration-placeholder {
+  font-size: 80px;
+  opacity: 0.22;
+}
+
+@media (max-width: 1024px) {
+  .employee-sidebar {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+}

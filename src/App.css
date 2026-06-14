@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hr-app {
+  display: flex;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Applicant & Employee portal — match Login page palette */
+.hr-app.hr-app-applicant,
+.hr-app.hr-app-employee {
+  background: radial-gradient(circle at 18% 18%, rgba(0, 255, 163, 0.12), transparent 34%),
+    radial-gradient(circle at 82% 0%, rgba(0, 173, 111, 0.12), transparent 32%),
+    linear-gradient(145deg, #050807 0%, #0a1210 45%, #07100d 100%);
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 260px;
+  flex: 1;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  padding: 40px;
+  max-width: 1400px;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.page-placeholder {
+  padding: 40px;
+  text-align: center;
+  font-size: 24px;
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 220px;
+  }
+
+  .content-wrapper {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/*
+ * Employee layout: keep last in this file so it wins over `.main-content` above.
+ * Main uses margin-left for fixed sidebar — employee sidebar is still 260px wide.
+ */
+.hr-app.hr-app-applicant .main-content,
+.hr-app.hr-app-employee .main-content {
+  background-color: transparent;
+  background: transparent;
+  color: #ecf2ff;
+}
+
+.hr-app.hr-app-applicant .content-wrapper,
+.hr-app.hr-app-employee .content-wrapper {
+  color: #ecf2ff;
+}
+
+.hr-app.hr-app-employee .page-placeholder {
+  color: #8d97ad;
+}
+
+.hr-app.hr-app-employee .logout-btn,
+.hr-app.hr-app-admin .logout-btn {
+  background: linear-gradient(135deg, #16d88f 0%, #0ba96b 100%);
+  color: #04110c;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.hr-app.hr-app-employee .logout-btn:hover,
+.hr-app.hr-app-admin .logout-btn:hover {
+  box-shadow: 0 6px 16px rgba(16, 152, 101, 0.35);
+}
+
+/* Administrator portal — same Login / HR green shell (URL /admin/...) */
+.hr-app.hr-app-admin {
+  background: radial-gradient(circle at 18% 18%, rgba(0, 255, 163, 0.12), transparent 34%),
+    radial-gradient(circle at 82% 0%, rgba(0, 173, 111, 0.12), transparent 32%),
+    linear-gradient(145deg, #050807 0%, #0a1210 45%, #07100d 100%);
+}
+
+.hr-app.hr-app-admin .main-content {
+  background-color: transparent;
+  background: transparent;
+  color: #ecf2ff;
+  min-width: 0;
+}
+
+.hr-app.hr-app-admin .content-wrapper {
+  color: #ecf2ff;
+  max-width: min(1400px, 100%);
+  min-width: 0;
+  overflow-x: visible;
+}
+
+.hr-app.hr-app-admin .page-placeholder {
+  color: #8d97ad;
+}
+
+.hr-app.hr-app-admin .sidebar {
+  background: linear-gradient(180deg, #0d3d2c 0%, #0a2a1f 55%, #071510 100%);
+  color: #ecf2ff;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.45);
+  border-right: 1px solid rgba(217, 236, 255, 0.12);
+}
+
+.hr-app.hr-app-admin .sidebar-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.hr-app.hr-app-admin .sidebar-logo {
+  color: #f4f7ff;
+}
+
+.hr-app.hr-app-admin .nav-menu>li>a {
+  color: #aeb8c8;
+}
+
+.hr-app.hr-app-admin .nav-menu>li>a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #dce3ef;
+}
+
+.hr-app.hr-app-admin .nav-menu>li>a.active {
+  background: linear-gradient(90deg, rgba(67, 244, 177, 0.14) 0%, rgba(67, 244, 177, 0.02) 100%);
+  color: #43f4b1;
+  border-left-color: #11c77d;
+}
+
+.hr-app.hr-app-admin .submenu {
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+.hr-app.hr-app-admin .submenu-item {
+  color: rgba(236, 242, 255, 0.82);
+}
+
+.hr-app.hr-app-admin .submenu-item:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #f4f7ff;
+}
+
+.hr-app.hr-app-admin .submenu-item.active {
+  background-color: rgba(67, 244, 177, 0.12);
+  color: #43f4b1;
+}
+
+.hr-app.hr-app-admin .illustration-placeholder {
+  opacity: 0.22;
+}
+
+.hr-app.hr-app-admin .ai-menu-item a {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(67, 244, 177, 0.25) !important;
+}
+
+.hr-app.hr-app-admin .ai-menu-item a:hover {
+  background: rgba(67, 244, 177, 0.12) !important;
+  box-shadow: 0 0 18px rgba(17, 199, 125, 0.2);
+}
+
+.hr-app.hr-app-admin .ai-menu-item a.active {
+  background: linear-gradient(135deg, #3ff0ae 0%, #1ccf89 100%) !important;
+  color: #07130e !important;
+}
+
+/* Browser suggestion/autofill: keep themed dark fields instead of white/yellow fill */
+.hr-app input:-webkit-autofill,
+.hr-app input:-webkit-autofill:hover,
+.hr-app input:-webkit-autofill:focus,
+.hr-app input:-webkit-autofill:active,
+.hr-app textarea:-webkit-autofill,
+.hr-app textarea:-webkit-autofill:hover,
+.hr-app textarea:-webkit-autofill:focus,
+.hr-app select:-webkit-autofill,
+.hr-app select:-webkit-autofill:hover,
+.hr-app select:-webkit-autofill:focus,
+.hr-app input:autofill,
+.hr-app textarea:autofill,
+.hr-app select:autofill {
+  -webkit-text-fill-color: #ecf2ff !important;
+  caret-color: #ecf2ff;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 0 0 1000px rgba(18, 24, 34, 0.95) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(18, 24, 34, 0.95) inset !important;
+  transition: background-color 99999s ease-out 0s;
+}
+
+@media (max-width: 1024px) {
+  .hr-app.hr-app-admin .sidebar {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hr-app.hr-app-admin .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+}
