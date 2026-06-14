@@ -111,18 +111,22 @@ function ApplicantOpenings({ onApply, userInfo }) {
       let resUrl = ''
 
       if (!formData.cvFile) {
-        if (profile?.cv_url) {
+        // Only reuse onboarding CV if it's a real Cloudinary/http URL
+        const onboardingCvUrl = profile?.cv_url
+        const isValidUrl = onboardingCvUrl && onboardingCvUrl.startsWith('http')
+
+        if (isValidUrl) {
           // Use already pre-attached CV from onboarding
           const payload = {
             job_id: selectedOpening._id,
             candidate_name: formData.name,
             candidate_email: normalizedEmail,
-            cv_url: profile.cv_url
+            cv_url: onboardingCvUrl
           }
           await applyForJobJson(payload)
-          resUrl = profile.cv_url
+          resUrl = onboardingCvUrl
         } else {
-          setSubmitError('Please upload your CV (PDF)')
+          setSubmitError('Please upload your CV (PDF). Your previous CV is no longer available.')
           setSubmitting(false)
           return
         }
@@ -300,20 +304,24 @@ function ApplicantOpenings({ onApply, userInfo }) {
                 </div>
                 <div className="form-group">
                   <label htmlFor="cvFile">
-                    {profile?.cv_url ? "Resume / CV (PDF - Optional)" : "Resume / CV (PDF - Required)"}
+                    {profile?.cv_url?.startsWith('http') ? "Resume / CV (PDF - Optional)" : "Resume / CV (PDF - Required)"}
                   </label>
                   <input
                     id="cvFile"
                     type="file"
                     accept="application/pdf"
                     onChange={(e) => handleChange('cvFile', e.target.files[0] || null)}
-                    required={!profile?.cv_url}
+                    required={!profile?.cv_url?.startsWith('http')}
                   />
-                  {profile?.cv_url && (
+                  {profile?.cv_url?.startsWith('http') ? (
                     <span className="cv-attached-help" style={{ fontSize: '11px', color: '#43f4b1', marginTop: '4px', display: 'block' }}>
                       ✓ Pre-attached onboarding CV will be used. Choose a new file to change/overwrite it.
                     </span>
-                  )}
+                  ) : profile?.cv_url ? (
+                    <span className="cv-attached-help" style={{ fontSize: '11px', color: '#f87171', marginTop: '4px', display: 'block' }}>
+                      ⚠ Previous CV is unavailable. Please upload your CV again.
+                    </span>
+                  ) : null}
                 </div>
               </div>
               {submitError && <div className="no-openings">{submitError}</div>}
