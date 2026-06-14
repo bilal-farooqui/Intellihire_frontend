@@ -58,7 +58,7 @@ function AssetList({ assets, onReturn, onDelete }) {
                       onClick={() => onReturn(asset.id)}
                       title="Return Asset"
                     >
-                      ↩️
+                      Return
                     </button>
                   )}
                   <button
@@ -66,7 +66,7 @@ function AssetList({ assets, onReturn, onDelete }) {
                     onClick={() => onDelete(asset.id)}
                     title="Delete"
                   >
-                    🗑️
+                    Delete
                   </button>
                 </div>
               </td>

@@ -49,14 +49,14 @@ function CVList({ cvs, onViewCV, onDeleteCV }) {
                       onClick={() => onViewCV(cv)}
                       title="View CV"
                     >
-                      👁️
+                      View
                     </button>
                     <button
                       className="btn-action btn-delete"
                       onClick={() => onDeleteCV(cv.id)}
                       title="Delete"
                     >
-                      🗑️
+                      Delete
                     </button>
                   </div>
                 </td>

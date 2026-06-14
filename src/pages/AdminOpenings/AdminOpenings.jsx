@@ -249,7 +249,7 @@ Assistant:`;
                 gap: '6px'
               }}
             >
-              {isAiMode ? '📝 Fill Manually' : '✨ Draft with AI'}
+              {isAiMode ? 'Fill Manually' : 'Draft with AI'}
             </button>
           </div>
 

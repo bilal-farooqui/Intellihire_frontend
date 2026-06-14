@@ -33,14 +33,14 @@ function EmployeeTable({ employees, onEdit, onDelete }) {
                     onClick={() => onEdit(employee)}
                     title="Edit"
                   >
-                    ✏️
+                    Edit
                   </button>
                   <button 
                     className="btn-action btn-delete"
                     onClick={() => onDelete(employee.id)}
                     title="Delete"
                   >
-                    🗑️
+                    Delete
                   </button>
                 </div>
               </td>

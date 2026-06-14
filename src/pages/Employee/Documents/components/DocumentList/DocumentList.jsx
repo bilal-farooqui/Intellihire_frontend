@@ -43,14 +43,14 @@ function DocumentList({ documents, onDownload, onDelete }) {
                     onClick={() => onDownload(document)}
                     title="Download"
                   >
-                    ⬇️
+                    View
                   </button>
                   <button
                     className="btn-action btn-delete"
                     onClick={() => onDelete(document.id)}
                     title="Delete"
                   >
-                    🗑️
+                    Delete
                   </button>
                 </div>
               </td>

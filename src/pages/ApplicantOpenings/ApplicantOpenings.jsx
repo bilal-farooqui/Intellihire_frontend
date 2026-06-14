@@ -315,11 +315,11 @@ function ApplicantOpenings({ onApply, userInfo }) {
                   />
                   {profile?.cv_url?.startsWith('http') ? (
                     <span className="cv-attached-help" style={{ fontSize: '11px', color: '#43f4b1', marginTop: '4px', display: 'block' }}>
-                      ✓ Pre-attached onboarding CV will be used. Choose a new file to change/overwrite it.
+                      Pre-attached onboarding CV will be used. Choose a new file to change/overwrite it.
                     </span>
                   ) : profile?.cv_url ? (
                     <span className="cv-attached-help" style={{ fontSize: '11px', color: '#f87171', marginTop: '4px', display: 'block' }}>
-                      ⚠ Previous CV is unavailable. Please upload your CV again.
+                      Previous CV is unavailable. Please upload your CV again.
                     </span>
                   ) : null}
                 </div>

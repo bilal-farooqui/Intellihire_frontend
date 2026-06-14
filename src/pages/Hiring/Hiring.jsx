@@ -270,7 +270,7 @@ function Hiring() {
 
             <div className="review-options">
               <div className="option-card ai-option" onClick={() => setViewMode('ai')}>
-                <div className="option-icon">🤖</div>
+                <div className="option-icon">AI</div>
                 <h3>AI Filtering</h3>
                 <p>Use AI to filter CVs that match job descriptions</p>
               </div>

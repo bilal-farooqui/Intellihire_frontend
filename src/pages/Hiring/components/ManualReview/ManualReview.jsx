@@ -76,14 +76,14 @@ function ManualReview({ cv, cvs = [], onSelectCV, onBack, onNext, onPrevious, to
                 a.click()
               }}
             >
-              ⬇️ View / Download CV
+              View / Download CV
             </button>
           )}
           <button className="btn-shortlist" type="button" onClick={onShortlist}>
-            ✓ Shortlist
+            Shortlist
           </button>
           <button className="btn-reject" type="button" onClick={onReject}>
-            ✗ Reject
+            Reject
           </button>
         </div>
       </div>

@@ -89,7 +89,7 @@ function AIFiltering({ cvs, selectedPosition, onBack, onViewCV }) {
             animate={{ opacity: 1, y: 0 }}
             className="ai-info-card"
           >
-            <div className="info-icon">🤖</div>
+            <div className="info-icon">AI</div>
             <div className="info-content">
               <h4>Advanced AI Analysis</h4>
               <p>
@@ -118,7 +118,7 @@ function AIFiltering({ cvs, selectedPosition, onBack, onViewCV }) {
               onClick={handleAIFilter}
               disabled={isAnalyzing}
             >
-              {isAnalyzing ? 'Analyzing...' : '🤖 Run AI Deep Scan'}
+              {isAnalyzing ? 'Analyzing...' : 'Run AI Deep Scan'}
             </button>
             {error && <p className="error-text">{error}</p>}
             <p className="ai-note">
