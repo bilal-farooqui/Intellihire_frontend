@@ -3,15 +3,15 @@
  * Openings, Attendance, AI Tester). Scoped to .hr-app-admin only.
  */
 .hr-app-admin {
-  --adm-glass: linear-gradient(170deg, rgba(18, 24, 34, 0.85) 0%, rgba(10, 13, 20, 0.94) 100%);
-  --adm-inner: rgba(255, 255, 255, 0.06);
-  --adm-inner-deep: rgba(10, 13, 20, 0.45);
-  --adm-border: rgba(217, 236, 255, 0.16);
-  --adm-border-soft: rgba(255, 255, 255, 0.08);
+  --adm-glass: rgba(255, 255, 255, 0.03);
+  --adm-inner: rgba(255, 255, 255, 0.015);
+  --adm-inner-deep: rgba(0, 0, 0, 0.2);
+  --adm-border: rgba(255, 255, 255, 0.08);
+  --adm-border-soft: rgba(255, 255, 255, 0.04);
   --adm-text: #ecf2ff;
   --adm-muted: #8d97ad;
   --adm-heading: #f4f7ff;
-  --adm-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --adm-shadow: 0 24px 60px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
 
 /* --- Shared titles & empty states --- */
