@@ -350,7 +350,13 @@
   border-radius: 20px !important;
 }
 
-.hr-app-admin .opening-form,
+.hr-app-admin .opening-form {
+  background: var(--adm-inner) !important;
+  border: 1px solid var(--adm-border-soft) !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+}
+
 .hr-app-admin .opening-row,
 .hr-app-admin .opening-card {
   background: var(--adm-inner) !important;
