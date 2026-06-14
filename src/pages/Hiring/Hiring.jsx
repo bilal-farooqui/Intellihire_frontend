@@ -4,7 +4,6 @@ import CVList from './components/CVList/CVList'
 import PositionFilter from './components/PositionFilter/PositionFilter'
 import ManualReview from './components/ManualReview/ManualReview'
 import AIFiltering from './components/AIFiltering/AIFiltering'
-import HiringAssistant from './components/HiringAssistant/HiringAssistant'
 import toast from 'react-hot-toast'
 import './Hiring.css'
 
@@ -358,9 +357,6 @@ function Hiring() {
           />
         )}
       </div>
-
-      {/* AI Assistant Floating Button */}
-      <HiringAssistant candidates={cvs} />
     </div>
   )
 }
