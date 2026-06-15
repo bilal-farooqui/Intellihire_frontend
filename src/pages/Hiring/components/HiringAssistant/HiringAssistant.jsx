@@ -53,7 +53,7 @@ function HiringAssistant({ candidates }) {
       // For now, I'll simulate a high-quality response if no endpoint is ready, 
       // or I can add a simple /chat endpoint to the backend.
       
-      const res = await axios.post(`${BACKEND_URL}/api/ai/chat`, {
+      const res = await axios.post(`${BACKEND_URL}/ai/chat`, {
         prompt: prompt
       })
 
